@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Kaspersky MVC library realisation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Kaspersky_MVC_library_realisation_jar</output-path>
+    <root id="archive" name="Kaspersky MVC library realisation.jar">
+      <element id="module-output" name="Kaspersky MVC library realisation" />
+    </root>
+  </artifact>
+</component>
