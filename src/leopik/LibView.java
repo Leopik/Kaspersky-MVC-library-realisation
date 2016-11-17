@@ -18,10 +18,29 @@ public class LibView {
      */
     public static void main(String[] args) {
         // You can change this to import books and persons from another place (file, internet, etc.)
-        Book bookArray[] = {new Book("Test"), new Book("LabGirl"), new Book("GoneGirl"), new Book("HarryPotter"), new Book("TheHungerGames"), new Book("ToKillaMockingbird"), new Book("PrideandPrejudice")};
+
+        List<Book> bookList;
+
+        switch (args[0]) {
+            case "set":
+                bookList = new BookSet().getBooks();
+                break;
+            case "list":
+                bookList = new BookList().getBooks();
+                break;
+            case "array":
+                bookList = new BookArray().getBooks();
+                break;
+            default:
+                bookList = null;
+                System.exit(1);
+                break;
+        }
+
+
         Person personArray[] = {new Person("John", "Smith"), new Person("Taylor", "Swift"), new Person("Oliver", "Sykes"), new Person("Kevin", "Ratajczak"), new Person("Matthew", "Bellamy"), new Person("Chester", "Bennington")};
 
-        Library library = new Library(Arrays.asList(personArray), Arrays.asList(bookArray));
+        Library library = new Library(Arrays.asList(personArray), bookList);
 
         new Controller(library, new LibView(library));
     }
